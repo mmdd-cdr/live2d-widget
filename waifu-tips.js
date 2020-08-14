@@ -240,7 +240,7 @@ function loadWidget(config) {
             after.split('/')[0] <= now.getMonth() + 1 &&
             now.getMonth() + 1 <= before.split('/')[0] &&
             after.split('/')[1] <= now.getDate() &&
-            now.getDate() <= before.split('/')[1]
+              now.getDate() <= before.split('/')[1]
           ) {
             let text = randomSelection(tips.text);
             text = text.replace('{year}', now.getFullYear());
@@ -266,8 +266,8 @@ function loadWidget(config) {
       let target = randomSelection(modelList.models[modelId]);
       loadlive2d('live2d', `${cdnPath}model/${target}/index.json`);
     } else {
-      loadlive2d('live2d', `${apiPath}get/?id=2-10`);
-      console.log(`Live2D 模型 2-10 加载完成`);
+      loadlive2d('live2d', `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
+      console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
     }
   }
 
